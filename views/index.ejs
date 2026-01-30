@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="heading">
+        <h2> Welcome! to our Give Content </h2><br/>
+    <h3>Where you can see other's content & Give your content</h3>
+    </div>
+    <div class="contents">
+        <% for(con of Contents){%>
+            <div class="post">
+                <div class="name">
+                    <p><span>#<%=con.name%></span></p>
+                </div>
+                <div class="body">
+                     <p>Maine Likha hai :</p><p><span> <%=con.content%></span></p>
+                </div>
+                <div class="update">
+                <div class="edit"><a href="http://localhost:8080/Home/<%=con.id%>/edit">EDIT</a></div>
+                <div class="delete">
+                    <form method="post" action="/Home/<%=con.id%>?_method=DELETE">
+                       <button>DELETE</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+                
+        <%}%>
+    </div>
+    <div class="new">
+        <a href="http://localhost:8080/Home/create"> CREATE</a>
+    </div>
+    
+</body>
+</html>

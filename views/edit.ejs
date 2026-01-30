@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>EDIT</title>
+</head>
+<body>
+    <div class="heading"><h2> EDIT your Content</h2></div>
+     <form class="new_form" method="post" action="/Home/<%=con.id%>?_method=patch">
+       <div class="new_input">
+        <p>YOUR NAME:<span>#<%=con.name%></span> </p> 
+       </div>
+        <br>
+        <div class="new_input">
+            <label> YOUR CONTENT:<br/><br/>
+                 <textarea class="text"  name="content"><%=con.content%></textarea>
+            </label>
+           
+        </div>
+        
+        <button class="btn">Submit</button>
+     </form>
+</body>
+</html>
